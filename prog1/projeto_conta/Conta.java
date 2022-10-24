@@ -38,8 +38,9 @@ public class Conta{
         return nome;
     }
 
-    public void depositar(double valor){
-        this.saldo += valor;
+    public void depositar(double deposvalor){
+        this.saldo += deposvalor;
+        resumoEtrato();
     }
 
     public boolean sacar (double valor){
@@ -50,12 +51,13 @@ public class Conta{
             System.out.println("saldo insuficiente!!!");
             return false;
         }
+       
     }
 
     public void resumoEtrato(){
         System.out.println("** resumo extrato da sua conta** ");
-        System.out.println("Nome :" +this.nome);
-        System.out.println("Saldo :" + this.saldo);
+        System.out.println("Nome :" +this.getNome());
+        System.out.println("Saldo :" + this.getSaldo());
     }
 
     public void  fazManutencao(){

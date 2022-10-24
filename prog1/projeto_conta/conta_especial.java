@@ -26,6 +26,10 @@ public class conta_especial extends Conta{
         return taxManutencao;
     }
 
+    public double getSaldo(){
+        return saldo;
+    }
+
     @Override
     public boolean sacar (double valor){
         super.sacar(valor);
@@ -36,9 +40,9 @@ public class conta_especial extends Conta{
     public void fazManutencao(){
         this.saldo -= taxManutencao;
     }
-
+    
     public void resumoExtrato(){
-        System.out.print("Nome :" +getNome() +"Saldo :" +getSaldo() +"Saldo Extra :" +getLimite() +" Taxa de manutenção :" + geTaxaManutencao());
+        System.out.print("Nome :" + getNome() + " Saldo :" + getSaldo() + " Saldo Extra :" + getLimite() +" Taxa de manutenção :" + geTaxaManutencao());
 
     }
 
