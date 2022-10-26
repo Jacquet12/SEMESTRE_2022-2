@@ -9,7 +9,7 @@ public class Classe_de_Teste {
         int numero = scan.nextInt();
 
         System.out.println("Digite o saldo:");
-        double  saldo= scan.nextDouble();
+        double  saldo = scan.nextDouble();
 
         System.out.println("Digite o nome:");
         String nome = scan.next();

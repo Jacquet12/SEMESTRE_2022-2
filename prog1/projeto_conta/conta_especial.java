@@ -38,7 +38,7 @@ public class conta_especial extends Conta{
     }
     @Override
     public void fazManutencao(){
-        this.saldo -= taxManutencao;
+        saldo -= taxManutencao;
     }
     
     public void resumoExtrato(){
