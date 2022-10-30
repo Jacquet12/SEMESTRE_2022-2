@@ -1,13 +1,17 @@
-public class conta_especial extends Conta{
+public class ContaEspecial extends Conta{
     private double limite;
     private double taxManutencao;
 
+    public ContaEspecial(){
 
-    public conta_especial(int numero, String nome, double limite, double taxManutencao){
-        this.numero = numero;
-        this.nome = nome;
+    }
+
+    public ContaEspecial(int numero, String nome, double limite, double taxManutencao){
+        super(numero, nome);
+        
         this.limite = limite;
         this.taxManutencao = taxManutencao;
+
     }
 
     void setLimite(int limite){
@@ -15,7 +19,7 @@ public class conta_especial extends Conta{
     }
 
     public double getLimite(){
-        return limite;
+        return this.limite;
     }
 
     void setTaxaManutencao(int taxaManutencao ){
@@ -23,12 +27,14 @@ public class conta_especial extends Conta{
     }
 
     public double geTaxaManutencao(){
-        return taxManutencao;
+        return this.taxManutencao;
     }
 
+  /*
     public double getSaldo(){
+        super.getSaldo();
         return saldo;
-    }
+    } */
 
     @Override
     public boolean sacar (double valor){
@@ -38,11 +44,14 @@ public class conta_especial extends Conta{
     }
     @Override
     public void fazManutencao(){
-        saldo -= taxManutencao;
+        //super.fazManutencao();
+        //System.out.println("saldo :"+this.getSaldo());
+        //System.out.println("saldo com super :"+super.getSaldo());
+        this.saldo -= this.geTaxaManutencao();
     }
     
     public void resumoExtrato(){
-        System.out.print("Nome :" + getNome() + " Saldo :" + getSaldo() + " Saldo Extra :" + getLimite() +" Taxa de manutenção :" + geTaxaManutencao());
+        System.out.print("Nome :" + this.getNome() + " Saldo :" + this.getSaldo() + " Saldo Extra :" + this.getLimite() +" Taxa de manutenção :" + this.geTaxaManutencao()+"\n");
 
     }
 

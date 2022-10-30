@@ -1,15 +1,14 @@
 public class Conta{
     protected int numero;
-    protected double saldo;
+    protected double saldo = 0;
     protected String nome;
 
     public Conta(){
 
     }
 
-    public Conta (int numero, double saldo, String nome){
+    public Conta (int numero, String nome){
         this.numero = numero;
-        this.saldo = saldo;
         this.nome = nome;
     }
 
@@ -19,7 +18,7 @@ public class Conta{
     }
 
     public int getNumero(){
-        return numero;
+        return this.numero;
     }
 
     void setSaldo(double saldo){
@@ -27,7 +26,7 @@ public class Conta{
     }
 
     public double getSaldo(){
-        return saldo;
+        return this.saldo;
     }
 
     void setNome(String nome){
@@ -35,17 +34,21 @@ public class Conta{
     }
 
     public String getNome(){
-        return nome;
+        return this.nome;
     }
 
     public void depositar(double deposvalor){
+        //System.out.println("saldo inicial = "+this.getSaldo()+ "R$");
         this.saldo += deposvalor;
-        resumoEtrato();
+        //System.out.println("saldo após o depósito = "+this.getSaldo()+ "R$");
+        //resumoExtrato();
     }
 
     public boolean sacar (double valor){
         if(this.saldo >= valor){
+            System.out.println("saldo inicial = "+this.getSaldo()+ "R$");
             this.saldo -= valor;
+            resumoExtrato();
             return true;
         }else{
             System.out.println("saldo insuficiente!!!");
@@ -54,10 +57,10 @@ public class Conta{
        
     }
 
-    public void resumoEtrato(){
+    public void resumoExtrato(){
         System.out.println("** resumo extrato da sua conta** ");
         System.out.println("Nome :" +this.getNome());
-        System.out.println("Saldo :" + this.getSaldo());
+        System.out.println("Saldo atual:" + this.getSaldo());
     }
 
     public void  fazManutencao(){

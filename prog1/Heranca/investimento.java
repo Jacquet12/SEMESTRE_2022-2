@@ -2,8 +2,7 @@ public class investimento extends Conta {
     protected double taxaRendimento;
 
     public investimento(int numero, String nome, double taxaRendimento){
-        this.numero = numero;
-        this.nome = nome;
+        super(numero, nome);
         this.taxaRendimento = taxaRendimento;
     }
 
@@ -12,16 +11,18 @@ public class investimento extends Conta {
     }
 
     public double getTaxaRendimento(){
-        return taxaRendimento;
+        return this.taxaRendimento;
+    }
+
+    @Override
+    public void  fazManutencao(){
+        this.saldo += (this.taxaRendimento * this.saldo) / 100;
+        //setSaldo(((this.taxaRendimento * this.saldo) / 100)+this.saldo);
     }
 
     
-    public void fazManutenção() {
-        this.saldo += (taxaRendimento * saldo) / 100;
-    }
-
     public void resumoExtrato(){
-        System.out.println("Saldo :" +this.getSaldo() +"Nopme :" +this.nome +"Porcentagem :" +this.taxaRendimento);
+        System.out.println(" Nome :" +this.getNome()       +" Porcentagem :"       +this.getTaxaRendimento()      +"Saldo :"+this.getSaldo());
     }
 
     
