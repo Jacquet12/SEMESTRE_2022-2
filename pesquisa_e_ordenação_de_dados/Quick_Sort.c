@@ -1,14 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include <math.h>
 
-void printBubblesort(int vetor[], int n){
-    for(int i = 0; i < n; i++){
-        printf("%d ", vetor[i]);
-    }
-    printf("\n");
-}
 
-int particiona(int vetor[], int inicio, int fim, int n){
+// void printBubblesort(int vetor[], int n){
+//     for(int i = 0; i < n; i++){
+//         printf("%d ", vetor[i]);
+//     }
+//     printf("\n");
+// }
+
+int particiona(int vetor[], int inicio, int fim){
     int j = fim;
     int k = inicio;
     int aux2;
@@ -30,18 +32,18 @@ int particiona(int vetor[], int inicio, int fim, int n){
     return j;
 }
 
-void Quick_Sort(int vetor[], int n, int inicio, int fim ){
+void Quick_Sort(int vetor[], int inicio, int fim ){
     if(inicio < fim){
-        int j = particiona(vetor[], inicio, fim); 
+        int j = particiona(vetor[fim-1], inicio, fim); 
         Quick_Sort(vetor, inicio, j-1);
         Quick_Sort(vetor, j+1, fim);
     }
 }
 
-// int main(){
-//     int n, c;
+ int main(){
+    int n, fim;
 //     scanf("%d", &n);
-//     int vetor[n];
+    int vetor[fim];
 //     for(int i = 0; i <  n; i++){
 //         scanf("%d", &vetor[i]);
 //     }
@@ -49,9 +51,9 @@ void Quick_Sort(int vetor[], int n, int inicio, int fim ){
 //     bubble(vetor, n);
    
    
-//    return 0;
+    return 0;
 
-// }
+}
 
 
 
